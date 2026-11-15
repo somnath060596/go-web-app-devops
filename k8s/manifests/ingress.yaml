@@ -1,12 +1,23 @@
+<<<<<<< HEAD
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: go-web-app-ingress
+=======
+# Ingress resource for the application
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: go-web-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+>>>>>>> b17ef0d110626d6cc5b8a5c2c521b683fe1f4265
 spec:
   ingressClassName: nginx
   rules:
   - host: go-web-app.local
     http:
+<<<<<<< HEAD
       paths:
       - pathType: Prefix
         path: /
@@ -16,3 +27,14 @@ spec:
             port:
               number: 80
  
+=======
+      paths: 
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: go-web-app
+            port:
+              number: 80
+
+>>>>>>> b17ef0d110626d6cc5b8a5c2c521b683fe1f4265

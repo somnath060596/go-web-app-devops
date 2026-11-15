@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -5,21 +6,42 @@ metadata:
   labels:
     app: go-web-app
   name: go-web-app
+=======
+# This is a sample deployment manifest file for a simple web application.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-web-app
+  labels:
+    app: go-web-app
+>>>>>>> b17ef0d110626d6cc5b8a5c2c521b683fe1f4265
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: go-web-app
+<<<<<<< HEAD
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
+=======
+  template:
+    metadata:
+>>>>>>> b17ef0d110626d6cc5b8a5c2c521b683fe1f4265
       labels:
         app: go-web-app
     spec:
       containers:
+<<<<<<< HEAD
       - image: somnath060596/goweb-app-101126:{{ .Values.image.tag }}
         name: go-web-app
         ports:
         - containerPort: 8080  
 status: {}
+=======
+      - name: go-web-app
+        image: abhishekf5/go-web-app:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 8080
+>>>>>>> b17ef0d110626d6cc5b8a5c2c521b683fe1f4265
