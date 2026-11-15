@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: go-web-app
+  name: go-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-web-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: go-web-app
+    spec:
+      containers:
+      - image: somnath060596/goweb-app-101126:{{ .Values.image.tag }}
+        name: go-web-app
+        ports:
+        - containerPort: 8080  
+status: {}
